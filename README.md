@@ -1,6 +1,6 @@
-a## Todo
+## Todo
 
-- [ ] After SignUp  navigate to /dashbord not /   
+- [x] After SignUp  navigate to /dashbord not /   
 - [ ]  In Landing page Add courses that are in Courses 
 - [ ]  Change the navigation top redirects
 - [ ]  Check why anayaltics not working
