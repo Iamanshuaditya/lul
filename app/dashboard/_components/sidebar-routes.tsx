@@ -14,7 +14,7 @@ const guestRoutes = [
   {
     icon: Compass,
     label: "Browse",
-    href: "/search",
+    href: "dashboard/search",
   },
 ];
 
@@ -34,7 +34,7 @@ const teacherRoutes = [
 export const SidebarRoutes = () => {
   const pathname = usePathname();
 
-  const isTeacherPage = pathname?.includes("/teacher");
+  const isTeacherPage = pathname?.includes("dashboard/teacher");
 
   const routes = isTeacherPage ? teacherRoutes : guestRoutes;
 
