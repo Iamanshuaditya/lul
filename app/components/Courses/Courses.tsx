@@ -148,14 +148,14 @@ const NamesList = () => {
   >("webdevelopment");
 
   const mobileDevelopment = names.filter(
-    (name) => name.category === "mobiledevelopment",
+    (name) => name.category === "mobiledevelopment"
   );
   const webDevelopment = names.filter(
-    (name) => name.category === "webdevelopment",
+    (name) => name.category === "webdevelopment"
   );
   const dataScience = names.filter((name) => name.category === "datascience");
   const cloudComputing = names.filter(
-    (name) => name.category === "cloudcomputing",
+    (name) => name.category === "cloudcomputing"
   );
 
   let selectedNames: Name[] = [];
@@ -221,7 +221,7 @@ const NamesList = () => {
           </h2>
           <div>
             <button
-              onClick={() => router.push("courses")}
+              onClick={() => router.push("/dashboard/search")}
               type="button"
               className="text-purple border-purple rounded border bg-transparent px-4 py-3 font-medium hover:border-transparent hover:bg-[#6A4C6D] hover:text-white"
             >
