@@ -58,7 +58,7 @@ const Navbar = () => {
                     href={item.href}
                     className={classNames(
                       item.current ? " text-purple" : "hover:text-purple",
-                      "text-15px space-links px-3 py-4 font-medium",
+                      "text-15px space-links px-3 py-4 font-medium"
                     )}
                     aria-current={item.href ? "page" : undefined}
                   >
@@ -70,25 +70,25 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* <button type="button" className="text-15px space-links font-medium">
-            <Link href={"/sign-in"}> Sign In</Link>
-          </button>
-
- 
-
-          <button
-            type="button"
-            className="hover:bg-purple text-15px ml-8 rounded bg-[#611F69] px-5 py-4 font-medium text-white hover:text-white"
-          >
-            <Link href={"/sign-up"}> Sign In</Link>
-          </button>
-  */}
-
           <SignedOut>
             <SignInButton />
           </SignedOut>
           <SignedIn>
             <UserButton />
+            <Link
+              href="/dashboard"
+              className="relative ml-4 inline-flex h-10 overflow-hidden rounded-full p-[2x] focus:outline-none focus:ring-2 focus-within:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+            >
+              <button
+                type="button"
+                className="relative inline-flex h-10 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+              >
+                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+                  {true ? "dashboard" : "Get Stated"}
+                </span>
+              </button>
+            </Link>
           </SignedIn>
 
           <div className="ml-2 block md:hidden">
@@ -98,8 +98,6 @@ const Navbar = () => {
               onClick={() => setIsOpen(true)}
             />
           </div>
-
-          {/* DRAWER LINKS DATA */}
 
           <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
             <Drawerdata />

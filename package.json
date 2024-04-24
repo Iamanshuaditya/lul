@@ -66,6 +66,7 @@
     "zustand": "^4.4.6"
   },
   "devDependencies": {
+    "@types/react-slick": "^0.23.13",
     "prisma": "^5.5.2"
   }
 }
