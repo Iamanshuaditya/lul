@@ -14,8 +14,8 @@ interface NavigationItem {
 }
 
 const navigation: NavigationItem[] = [
-  { name: "Home", href: "/", current: true },
-  { name: "Courses", href: "/courses", current: false },
+  { name: "Home", href: "#", current: true },
+  { name: "Courses", href: "#courses-section", current: false },
   { name: "Mentors", href: "#mentors-section", current: false },
   { name: "Testimonial", href: "#testimonial-section", current: false },
   { name: "Join", href: "#join-section", current: false },
@@ -38,12 +38,12 @@ const Navbar = () => {
             <div className="flex flex-shrink-0 items-center">
               <img
                 className="h-30px w-30px block lg:hidden"
-                src={"/assets/logo/Logo.svg"}
+                src={"/assets/logo/logo-edu"}
                 alt="Courses-Logo"
               />
               <img
                 className="h-48px w-48px hidden lg:block"
-                src={"/assets/logo/Logo.svg"}
+                src={"/assets/logo/logo-edu"}
                 alt="Courses-Logo"
               />
             </div>
