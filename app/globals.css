@@ -1,6 +1,105 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+
+ 
+* {
+  outline: none;
+}
+
+html {
+  --scroll-behavior: smooth!important;
+  scroll-behavior: smooth!important;
+  }
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html:not([data-scroll="0"]) .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white !important;
+  opacity: 1.9;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  transition: 0.4s linear;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  z-index: 3;
+}
+
+.banner-image {
+  background-image: url('/assets/banner/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (max-width: 640px) {
+  .banner-image {
+    background-image: none !important;
+    background-color: #FCF5EF;
+  }
+}
+
+.bg-newsletter {
+  background-image: url('/assets/newsletter/hands.svg');
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.boxshadow {
+  box-shadow: 0px 64px 64px -48px #F5EEE8;
+}
+
+.position-green {
+  top: 62%;
+  right: 0%;
+  left: 54%;
+  bottom: 60%;
+}
+
+.bannerBorder {
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 640px) {
+  .bannerBorder {
+    border-left: none !important;
+  }
+}
+
+.nowhitespace {
+  white-space: nowrap;
+}
+
+.mentorShadow {
+  box-shadow: 0px 4px 20px rgba(110, 127, 185, 0.1);
+}
+
+.footer-icons{
+  transition: .5s;
+}
+
+.footer-icons:hover{
+  transform: translateY(-8px);
+}
+
+.space-links {
+  transition: .3s;
+}
+.space-links:hover {
+  letter-spacing: 1px;
+}
 
 html,
 body,
@@ -88,3 +187,5 @@ body,
 }
 
 @import '~@uploadthing/react/styles.css'
+
+ 
