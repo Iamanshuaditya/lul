@@ -88,7 +88,12 @@ export async function POST(
         userId: user.id,
       },
     });
-
+    await db.purchase.create({
+      data: {
+        userId: user.id,
+        courseId: course.id,
+      },
+    });
  
 
     return NextResponse.json({ url: session.url });
