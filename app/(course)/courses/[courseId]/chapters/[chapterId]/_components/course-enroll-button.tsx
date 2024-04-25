@@ -20,6 +20,7 @@ export const CourseEnrollButton = ({
   const onClick = async () => {
     try {
       setIsLoading(true);
+      alert("Please do not use India as the billing address");
       const response = await axios.post(`/api/courses/${courseId}/checkout`);
       window.location.assign(response.data.url);
     } catch (error) {
