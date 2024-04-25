@@ -33,7 +33,7 @@ const Navbar = () => {
     <div className="bg-[#FCF6EF]">
       <div className="mx-auto max-w-7xl   px-6 lg:px-8">
         <div className="relative flex h-20 items-center justify-between">
-          <div className="flex flex-1 items-center sm:items-stretch sm:justify-start">
+          <div className="flex flex-1 items-center   sm:justify-start">
             {/* LOGO */}
 
             <div className="flex flex-shrink-0 items-center">
