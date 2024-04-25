@@ -4,8 +4,10 @@ import gsap from "gsap";
 import Dropdownone from "./Dropdownone";
 import Dropdowntwo from "./Dropdowntwo";
 import { useGSAP } from "@gsap/react";
+import { useRouter } from "next/navigation";
 
 const Banner = () => {
+  const router = useRouter();
   useGSAP(() => {
     gsap.to("#heading", { opacity: 1, delay: 1, y: -20 });
     gsap.to("#desc", { opacity: 1, delay: 1.2, y: -10 });
@@ -81,6 +83,7 @@ const Banner = () => {
               </div>
               <div className="col-span-3 mt-2 sm:col-span-2">
                 <button
+                  onClick={() => router.push("/dashboard/search")}
                   type="button"
                   className="hover:bg-pruple w-full rounded bg-[#611F69] px-3 py-4 font-bold text-white"
                 >

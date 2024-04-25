@@ -6,6 +6,7 @@ import Drawerdata from "./Drawerdata";
 
 import Contactus from "./Contactus";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import Image from "next/image";
 
 interface NavigationItem {
   name: string;
@@ -36,14 +37,18 @@ const Navbar = () => {
             {/* LOGO */}
 
             <div className="flex flex-shrink-0 items-center">
-              <img
-                className="h-30px w-30px block lg:hidden"
-                src={"/assets/logo/logo-edu"}
+              <Image
+                height={24}
+                width={24}
+                className="h-24px w-24px block lg:hidden"
+                src={"assets/logo/Logo.svg"}
                 alt="Courses-Logo"
               />
-              <img
-                className="h-48px w-48px hidden lg:block"
-                src={"/assets/logo/logo-edu"}
+              <Image
+                width={28}
+                height={28}
+                className=" hidden lg:block w-20 h-20 object-scale-down"
+                src={"assets/logo/Logo.svg"}
                 alt="Courses-Logo"
               />
             </div>
@@ -51,7 +56,7 @@ const Navbar = () => {
             {/* LINKS */}
 
             <div className="hidden sm:ml-14 md:block">
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 items-center justify-center">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
