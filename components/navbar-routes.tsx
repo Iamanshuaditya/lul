@@ -11,6 +11,10 @@ import { isTeacher } from "@/lib/teacher";
 const NavbarRoutes = () => {
   const { userId } = useAuth();
 
+  // console.log("userId:", userId);
+  // console.log("Teacher ID:", process.env.NEXT_PUBLIC_TEACHER_ID);
+  // console.log("Is user a teacher?", isTeacher(userId || null));
+
   const pathname = usePathname();
 
   const isTeacherPage = pathname?.startsWith("/teacher");
