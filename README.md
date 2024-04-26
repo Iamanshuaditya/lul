@@ -1,5 +1,14 @@
 # Educational Platform
 
+## Screenshots
+
+![App Screenshot](https://pbs.twimg.com/media/GL8_R0cbAAAdyl2?format=jpg&name=large)
+--
+![](https://pbs.twimg.com/media/GL8_clmaYAAjf2n?format=jpg&name=large)
+--
+![](https://pbs.twimg.com/media/GL8_WZxbMAM3Iyo?format=jpg&name=large)
+
+
 ## Your Comprehensive Learning Solution
 
 Our platform offers a seamless solution for managing and delivering educational content, catering to both educators and learners. Whether you're eager to explore new subjects or share knowledge, our platform has you covered.
@@ -46,9 +55,7 @@ Our platform offers a seamless solution for managing and delivering educational 
 - **Backend:** Prisma, MySQL
 - **Payment Integration:** Stripe
 
-## Contributors:
-- [Your Name]
-- [Your Team Members]
+ 
 
 ## Support:
 For inquiries or assistance, contact us on [Twitter](https://twitter.com/AnshuAd14312398).
