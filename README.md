@@ -1,17 +1,25 @@
 # Educational Platform
 
-## Screenshots
-
+ 
+## Landing Page
+![image](https://github.com/Iamanshuaditya/lul/assets/87059568/5335e96d-0c5f-4fa3-a146-4b4f1d8b9af9)
+## Login Pgae
+ ![image](https://github.com/Iamanshuaditya/lul/assets/87059568/320782a4-bfb2-43fb-b67d-f368714c2cd3)
+## UserPage
 ![App Screenshot](https://pbs.twimg.com/media/GL8_R0cbAAAdyl2?format=jpg&name=large)
 --
+## Admin dashboard to add Courses
 ![](https://pbs.twimg.com/media/GL8_clmaYAAjf2n?format=jpg&name=large)
---
+
 ![](https://pbs.twimg.com/media/GL8_WZxbMAM3Iyo?format=jpg&name=large)
---
+## Stripe for Payment
 ![](https://github.com/Iamanshuaditya/lul/assets/87059568/e6953e65-9e22-4dfe-b4e4-42c7daeec956)
---
+# SidePanel for user to watch courses
 ![image](https://github.com/Iamanshuaditya/lul/assets/87059568/c6860f9b-ef04-4269-9f3a-f33c20c3a01a)
 
+## Teacher Dashboard to Watch course activity
+ 
+ ![image](https://github.com/Iamanshuaditya/lul/assets/87059568/0f5d8b01-52cb-4a0f-a4de-049545dcc00e)
 
 
 
