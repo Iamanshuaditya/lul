@@ -3,7 +3,7 @@
  
 ## Landing Page
 ![image](https://github.com/Iamanshuaditya/lul/assets/87059568/5335e96d-0c5f-4fa3-a146-4b4f1d8b9af9)
-## Login Pgae
+## Login Page
  ![image](https://github.com/Iamanshuaditya/lul/assets/87059568/320782a4-bfb2-43fb-b67d-f368714c2cd3)
 ## UserPage
 ![App Screenshot](https://pbs.twimg.com/media/GL8_R0cbAAAdyl2?format=jpg&name=large)
