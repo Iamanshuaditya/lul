@@ -9,7 +9,7 @@ import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "LMS",
+  title: "E-learning",
   description: "A learning management system",
 };
 
