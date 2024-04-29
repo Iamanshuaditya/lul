@@ -73,8 +73,8 @@ export default function Students() {
 
           0
         )
-        .from(skill, { x: -20, opacity: 0, ease: "power3.inOut" })
-        .from(Slider, { y: 20, opacity: 0, ease: "power3.inOut" });
+        .from(skill, { x: -20, opacity: 0, ease: "power3.inOut" }, 0)
+        .from(Slider, { y: 20, opacity: 0, ease: "power3.inOut", delay: 0 });
     }
 
     const trigger = ScrollTrigger.create({
