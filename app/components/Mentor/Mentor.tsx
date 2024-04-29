@@ -1,4 +1,9 @@
-// MENTORS DATA
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+import React from "react";
+gsap.registerPlugin(ScrollTrigger);
 
 interface Product {
   id: number;
@@ -61,30 +66,78 @@ const products: Product[] = [
 ];
 
 const Mentor = () => {
+  const contentContainer = React.useRef<HTMLDivElement | null>(null);
+  useGSAP(() => {
+    const tl = gsap.timeline({ paused: true });
+    const LeftContainer =
+      contentContainer.current?.querySelector(".left-content");
+    const rightContainer =
+      contentContainer.current?.querySelector(".right-container");
+    const imageContainer =
+      contentContainer.current?.querySelector(".image-container");
+    if (LeftContainer && rightContainer && imageContainer) {
+      tl.from(LeftContainer, {
+        x: "-100vh",
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+      })
+        .from(
+          rightContainer,
+          {
+            opacity: 0,
+            x: "100vw",
+            duration: 1,
+            ease: "power3.out",
+          },
+          0
+        )
+        .fromTo(
+          imageContainer,
+          { opacity: 0, y: 10 },
+          { opacity: 1, y: -5, duration: 1, ease: "power3.out" }
+        );
+    }
+
+    const trigger = ScrollTrigger.create({
+      trigger: contentContainer.current,
+      start: "top bottom",
+      end: "bottom top",
+      toggleActions: "play none none reverse",
+      onEnter: () => tl.play(),
+    });
+
+    return () => {
+      trigger.kill();
+    };
+  }, []);
   return (
     <div
-      id="mentors-section"
+      id="mentors-section "
+      ref={contentContainer}
       className="mx-auto max-w-2xl   px-4 pb-16 sm:px-6 sm:py-20 lg:max-w-7xl lg:px-8"
     >
       <div className="mb-12 items-center justify-between sm:flex">
-        <h2 className="my-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+        <h2 className="my-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl left-content">
           Meet with our Mentors
         </h2>
         <div>
           <button
             type="button"
-            className="text-purple border-lightgrey rounded border bg-transparent px-4 py-3 font-medium hover:border-transparent hover:bg-[#6A4C6D] hover:text-white"
+            className="text-purple border-lightgrey rounded border bg-transparent px-4 py-3 font-medium hover:border-transparent hover:bg-[#6A4C6D] hover:text-white right-container"
           >
             Explore 10+ our Mentor
           </button>
         </div>
       </div>
 
-      <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8 ">
+      <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8 image-container ">
         {products.map((product) => (
           <div key={product.id} className="group relative">
             <div className="aspect-w-1 aspect-h-1 lg:aspect-none min-h-80 w-full overflow-hidden rounded-md bg-gray-200 lg:h-80">
-              <img
+              <Image
+                height={10}
+                width={10}
                 src={product.imageSrc}
                 alt={product.imageAlt}
                 className="h-full w-full object-cover object-center lg:h-full lg:w-full"

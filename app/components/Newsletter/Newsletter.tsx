@@ -1,7 +1,44 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React from "react";
+
 const Newsletter = () => {
+  const contentContainer = React.useRef<HTMLDivElement | null>(null);
+  useGSAP(() => {
+    const tl = gsap.timeline({ paused: true });
+    const NewsLetter = contentContainer.current?.querySelector("#news-letter");
+
+    if (NewsLetter) {
+      tl.from(NewsLetter, {
+        y: 30,
+        duration: 1,
+        ease: "power3.out",
+      });
+    }
+
+    const trigger = ScrollTrigger.create({
+      trigger: contentContainer.current,
+      start: "top bottom",
+      end: "bottom top",
+      toggleActions: "play none none reverse",
+      onEnter: () => tl.play(),
+    });
+
+    return () => {
+      trigger.kill();
+    };
+  }, []);
   return (
-    <div id="join-section" className="relative z-10 -mt-32">
-      <div className="bg-orange bg-newsletter mx-auto max-w-2xl rounded-lg bg-[#F9CD92] px-4 py-16 sm:px-6 md:max-w-7xl md:py-24 lg:px-24">
+    <div
+      id="join-section"
+      className="relative z-10 -mt-32"
+      ref={contentContainer}
+    >
+      <div
+        className="bg-orange bg-newsletter mx-auto max-w-2xl rounded-lg bg-[#F9CD92] px-4 py-16 sm:px-6 md:max-w-7xl md:py-24 lg:px-24"
+        id="news-letter"
+      >
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 xl:gap-x-8">
           {/* COLUMN-1 */}
           <div>

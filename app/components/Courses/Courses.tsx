@@ -8,6 +8,11 @@ import {
   CloudIcon,
 } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface Name {
   course: string;
@@ -138,6 +143,52 @@ const names: Name[] = [
 
 const NamesList = () => {
   const router = useRouter();
+  const contentContainer = React.useRef<HTMLDivElement | null>(null);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({ paused: true });
+    const LeftContainer =
+      contentContainer.current?.querySelector(".left-content");
+    const rightContainer =
+      contentContainer.current?.querySelector(".right-container");
+    const NavigateContainer =
+      contentContainer.current?.querySelector(".course-card");
+
+    if (LeftContainer && rightContainer && NavigateContainer) {
+      tl.from(LeftContainer, {
+        x: "-100vh",
+        duration: 0.8,
+        ease: "power3.out",
+      })
+        .from(
+          rightContainer,
+          {
+            x: "100vw",
+            duration: 0.8,
+            ease: "power3.out",
+          },
+          0
+        )
+        .fromTo(
+          NavigateContainer,
+          { opacity: 0, y: 5 },
+          { opacity: 1, y: -20, duration: 0.5, ease: "power3.out" }
+        );
+    }
+
+    const trigger = ScrollTrigger.create({
+      trigger: contentContainer.current,
+      start: "top bottom",
+      end: "bottom top",
+      toggleActions: "play none none reverse",
+      onEnter: () => tl.play(),
+    });
+
+    return () => {
+      trigger.kill();
+    };
+  }, []);
+
   const [selectedButton, setSelectedButton] = useState<
     | "mobiledevelopment"
     | "webdevelopment"
@@ -212,31 +263,32 @@ const NamesList = () => {
   return (
     <div>
       <div
+        ref={contentContainer}
         id="courses-section"
         className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-36 lg:max-w-7xl lg:px-8"
       >
         <div className="items-center justify-between pb-12 sm:flex">
-          <h2 className="my-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+          <h2 className="my-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl left-content">
             Popular Courses
           </h2>
           <div>
             <button
               onClick={() => router.push("/dashboard/search")}
               type="button"
-              className="text-purple border-purple rounded border bg-transparent px-4 py-3 font-medium hover:border-transparent hover:bg-[#6A4C6D] hover:text-white"
+              className="text-purple border-purple rounded border bg-transparent px-4 py-3 font-medium hover:border-transparent hover:bg-[#6A4C6D] hover:text-white right-container"
             >
               Explore Classes
             </button>
           </div>
         </div>
 
-        <div className="nowhitespace flex space-x-5 overflow-x-auto rounded-xl bg-white p-1">
+        <div className="nowhitespace flex space-x-5 overflow-x-auto rounded-xl bg-white p-1 .category ">
           {/* FOR DESKTOP VIEW */}
           <button
             type="button"
             onClick={() => setSelectedButton("webdevelopment")}
             className={
-              "bg-white " +
+              "bg-white   " +
               (selectedButton === "webdevelopment"
                 ? "border-orange border-b-2 text-black"
                 : "text-lightgrey") +
@@ -246,6 +298,7 @@ const NamesList = () => {
             Web Development
           </button>
           <button
+            type="button"
             onClick={() => setSelectedButton("mobiledevelopment")}
             className={
               "bg-white " +
@@ -258,6 +311,7 @@ const NamesList = () => {
             Mobile Development
           </button>
           <button
+            type="button"
             onClick={() => setSelectedButton("datascience")}
             className={
               "bg-white " +
@@ -336,7 +390,7 @@ const NamesList = () => {
         <div>
           <div className="mx-auto max-w-7xl">
             <div className="grid grid-cols-1 gap-x-8 gap-y-10 py-12">
-              <div className="col-start-1 grid grid-cols-1 gap-x-8 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="col-start-1 grid grid-cols-1 gap-x-8 sm:grid-cols-2 lg:grid-cols-4 course-card">
                 {nameElements.length > 0 ? (
                   nameElements
                 ) : (
