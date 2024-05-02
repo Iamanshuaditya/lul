@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 import Drawer from "./Drawer";
 import Drawerdata from "./Drawerdata";
-
 import Contactus from "./Contactus";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
@@ -34,8 +33,6 @@ const Navbar = () => {
       <div className="mx-auto max-w-7xl   px-6 lg:px-8">
         <div className="relative flex h-20 items-center justify-between">
           <div className="flex flex-1 items-center   sm:justify-start">
-            {/* LOGO */}
-
             <div className="flex flex-shrink-0 items-center">
               <Image
                 height={24}
@@ -52,8 +49,6 @@ const Navbar = () => {
                 alt="Courses-Logo"
               />
             </div>
-
-            {/* LINKS */}
 
             <div className="hidden sm:ml-14 md:block">
               <div className="flex space-x-4 items-center justify-center">

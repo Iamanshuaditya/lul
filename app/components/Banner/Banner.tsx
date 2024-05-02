@@ -34,27 +34,28 @@ const Banner = () => {
             <div className="compo opcaity-0 mt-10 flex items-center justify-center gap-x-6">
               <div className="compo hidden -space-x-2 overflow-hidden opacity-0 sm:block">
                 <img
-                  className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+                  className="inline-block h-12 w-12 rounded-full ring-2 ring-white transition-transform transform hover:scale-110"
                   src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt=""
                 />
+
                 <img
-                  className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+                  className="inline-block h-12 w-12 rounded-full ring-2 ring-white transition-transform transform hover:scale-110"
                   src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt=""
                 />
                 <img
-                  className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+                  className="inline-block h-12 w-12 rounded-full ring-2 ring-white transition-transform transform hover:scale-110"
                   src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80"
                   alt=""
                 />
                 <img
-                  className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+                  className="inline-block h-12 w-12 rounded-full ring-2 ring-white transition-transform transform hover:scale-110"
                   src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt=""
                 />
                 <img
-                  className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+                  className="inline-block h-12 w-12 rounded-full ring-2 ring-white transition-transform transform hover:scale-110"
                   src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt=""
                 />
@@ -70,8 +71,6 @@ const Banner = () => {
               </div>
             </div>
           </div>
-
-          {/* DROPDOWN BUTTONS */}
 
           <div className="boxshadow mx-auto mt-24 max-w-4xl rounded-lg bg-white px-6 pb-8 pt-6 lg:max-w-4xl lg:px-8">
             <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-8 xl:gap-x-8">
